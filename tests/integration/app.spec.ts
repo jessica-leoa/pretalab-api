@@ -1,6 +1,5 @@
 import request from "supertest";
-import app from "../../src/index";
-import { transactions } from "../../src/data";
+import app from "../../src/app";
 
 describe("Transactions API", () => {
   it("should return a 200 status code", async () => {
@@ -8,4 +7,3 @@ describe("Transactions API", () => {
     expect(response.status).toBe(200);
   });
 });
-
