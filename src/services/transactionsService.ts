@@ -9,6 +9,10 @@ type Transaction = {
     category: string;
 };
 
+export const getAllTransactions = (): Transaction[] => {
+  return transactions;
+};
+
 export const getTransactionsById = (id: string): Transaction | undefined => {
   return transactions.find((transaction) => transaction.id === id);
 };
@@ -17,3 +21,4 @@ export const createTransaction = (transaction: Transaction): Transaction => {
   transactions.push(transaction);
   return transaction;
 };
+

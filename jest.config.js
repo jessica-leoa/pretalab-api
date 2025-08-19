@@ -10,4 +10,11 @@ module.exports = {
     ...tsJestTransformCfg,
   },
   setupFiles: ["<rootDir>/tests/jest.setup.js"],
+  setupFilesAfterEnv: ["<rootDir>/tests/integration/setup.js"], 
+  collectCoverageFrom: [ 
+    'src/**/*.ts',
+    '!src/index.ts',
+    '!src/**/*.d.ts',
+  ],
+  coverageDirectory: 'coverage',
 };

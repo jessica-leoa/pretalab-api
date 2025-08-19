@@ -1,7 +1,6 @@
 import express from "express";
-import { transactions } from "./data";
-import { getTransactionsById } from "./services/transactionsService";
-import { createTransactionController } from "./controller/createTransaction";
+import { createTransactionController } from "./controller/createTransactionController";
+import { getTransactionByIdController, getAllTransactionsController } from "./controller/getTransactionsController";
 import { aiResponse } from "./controller/ai";
 import { aiResponseChat } from "./controller/aiChat";
 
@@ -9,30 +8,18 @@ const app = express();
 
 app.use(express.json());
 
+// rota raiz
 app.get("/", (_req, res) => {
   res.json({ message: "Transactions API v2.5" });
 });
 
-
-app.get("/transactions", (_req, res) => {
-  res.json({ transactions });
-});
-
-
-app.get("/transactions/:id", (req, res) => {
-  const { id } = req.params;
-  const transaction = getTransactionsById(id);
-  if (!transaction) {
-    return res.status(404).json({ message: "Transação não encontrada" });
-  }
-  res.json({ transaction });
-});
+// rotas de transações
+app.get("/api/transactions", getAllTransactionsController);
+app.get("/api/transactions/:id", getTransactionByIdController);
+app.post("/api/transactions", createTransactionController);
 
 
-app.post("/transactions", (req, res) => {
-  createTransactionController(req, res);
-});
-
+// Rotas da IA
 app.post("/ai", (req, res) => {
   aiResponse(req, res);
 });
