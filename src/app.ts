@@ -5,6 +5,7 @@ import { aiResponse } from "./controller/ai";
 import { aiResponseChat } from "./controller/aiChat";
 import { getAllPurchasesController, getPurchaseByIdController } from "./controller/purchasesController";
 import { checkoutController } from './controller/checkoutController';
+import { getAllProductsController, getProductByIdController } from './controller/productsController';
 
 const app = express();
 
@@ -26,6 +27,10 @@ app.get("/api/purchases/:id", getPurchaseByIdController);
 
 // rotas de checkout
 app.post("/api/checkout", checkoutController);
+
+// rotas de produtos
+app.get("/api/products", getAllProductsController);
+app.get("/api/products/:id", getProductByIdController);
 
 
 // Rotas da IA
