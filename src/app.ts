@@ -3,7 +3,7 @@ import { createTransactionController } from "./controller/createTransactionContr
 import { getTransactionByIdController, getAllTransactionsController } from "./controller/getTransactionsController";
 import { aiResponse } from "./controller/ai";
 import { aiResponseChat } from "./controller/aiChat";
-
+import { getAllPurchasesController, getPurchaseByIdController } from "./controller/purchasesController";
 const app = express();
 
 app.use(express.json());
@@ -17,6 +17,11 @@ app.get("/", (_req, res) => {
 app.get("/api/transactions", getAllTransactionsController);
 app.get("/api/transactions/:id", getTransactionByIdController);
 app.post("/api/transactions", createTransactionController);
+
+// rotas de compras
+app.get("/api/purchases", getAllPurchasesController);
+app.get("/api/purchases/:id", getPurchaseByIdController);
+
 
 
 // Rotas da IA

@@ -6,6 +6,13 @@ export const createTransactionController = (req: Request, res: Response): void =
   const { amount, description, type } = req.body;
 
   // Validação dos campos obrigatórios
+   if (!amount || !description || !type) {
+    res.status(400).json({ 
+      message: 'Campos obrigatórios: amount, description, type' 
+    });
+    return;
+  }
+
    if (typeof amount !== 'number' || amount <= 0) {
     res.status(400).json({ 
       message: 'Amount deve ser um número positivo' 
@@ -16,13 +23,6 @@ export const createTransactionController = (req: Request, res: Response): void =
     if (type !== 'income' && type !== 'expense') {
     res.status(400).json({ 
       message: 'Type deve ser "income" ou "expense"' 
-    });
-    return;
-  }
-
-   if (!amount || !description || !type) {
-    res.status(400).json({ 
-      message: 'Campos obrigatórios: amount, description, type' 
     });
     return;
   }
