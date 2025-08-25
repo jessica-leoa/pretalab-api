@@ -16,7 +16,7 @@ describe("Purchases Service - Unit Tests", () => {
         total: 7850,
         items: [
           {
-            productId: 1,
+            productId: "1",
             quantity: 1,
             name: "Notebook Gamer Pro",
             price: 7500
@@ -29,7 +29,7 @@ describe("Purchases Service - Unit Tests", () => {
         total: 1200,
         items: [
           {
-            productId: 2,
+            productId: "2",
             quantity: 1,
             name: "Mouse Sem Fio",
             price: 350
@@ -75,7 +75,7 @@ describe("Purchases Service - Unit Tests", () => {
       });
 
       expect(result?.items[0]).toMatchObject({
-        productId: 1,
+        productId: "1",
         name: "Notebook Gamer Pro"
       });
     });

@@ -7,13 +7,13 @@ export const purchases: Purchase[] = [
     total: 7850,
     items: [
       {
-        productId: 1,
+        productId: "1",
         quantity: 1,
         name: "Notebook Gamer Pro",
         price: 7500
       },
       {
-        productId: 2,
+        productId: "2",
         quantity: 1, 
         name: "Mouse Sem Fio Ultra-leve",
         price: 350
@@ -26,13 +26,13 @@ export const purchases: Purchase[] = [
     total: 1200,
     items: [
       {
-        productId: 3,
+        productId: "3",
         quantity: 2,
         name: "Teclado Mecânico RGB",
         price: 600
       },
       {
-        productId: 4,
+        productId: "4",
         quantity: 1,
         name: "Monitor Full HD 24 polegadas",
         price: 600
@@ -45,7 +45,7 @@ export const purchases: Purchase[] = [
     total: 450,
     items: [
       {
-        productId: 5,
+        productId: "5",
         quantity: 1,
         name: "Cadeira Gamer Confortável",
         price: 450
@@ -58,13 +58,13 @@ export const purchases: Purchase[] = [
     total: 9800,
     items: [
       {
-        productId: 6,
+        productId: "6",
         quantity: 1,
         name: "PC Gamer High-End",
         price: 9500
       },
       {
-        productId: 7,
+        productId: "7",
         quantity: 1,
         name: "Headset Surround Sound",
         price: 300
@@ -77,13 +77,13 @@ export const purchases: Purchase[] = [
     total: 2200,
     items: [
       {
-        productId: 8,
+        productId: "8",
         quantity: 1,
         name: "Webcam HD 1080p",
         price: 200
       },
       {
-        productId: 9,
+        productId: "9",
         quantity: 2,
         name: "Microfone Condensador Profissional",
         price: 1000
@@ -96,13 +96,13 @@ export const purchases: Purchase[] = [
     total: 3000,
     items: [
       {
-        productId: 10,
+        productId: "10",
         quantity: 1,
         name: "Roteador Wi-Fi 6",
         price: 1500
       },
       {
-        productId: 11,
+        productId: "11",
         quantity: 2,
         name: "Extensor de Sinal Wi-Fi",
         price: 750
@@ -115,13 +115,13 @@ export const purchases: Purchase[] = [
     total: 6000,
     items: [
       {
-        productId: 12,
+        productId: "12",
         quantity: 1,
         name: "SSD NVMe 1TB",
         price: 2000
       },
       {
-        productId: 13,
+        productId: "13",
         quantity: 2,
         name: "HD Externo 2TB",
         price: 2000
@@ -134,13 +134,13 @@ export const purchases: Purchase[] = [
     total: 1500,
     items: [
       {
-        productId: 14,
+        productId: "14",
         quantity: 1,
         name: "Fonte de Alimentação 750W",
         price: 500
       },
       {
-        productId: 15,
+        productId: "15",
         quantity: 2,
         name: "Cabos HDMI Premium",
         price: 500
@@ -153,7 +153,7 @@ export const purchases: Purchase[] = [
     total: 400,
     items: [
       {
-        productId: 16,
+        productId: "16",
         quantity: 1,
         name: "Suporte para Monitor Ajustável",
         price: 400
@@ -166,25 +166,25 @@ export const purchases: Purchase[] = [
     total: 750,
     items: [
       {
-        productId: 17,
+        productId: "17",
         quantity: 1,
         name: "Placa de Captura de Vídeo",
         price: 750
       },
       {
-        productId: 18,
+        productId: "18",
         quantity: 1,
         name: "Cabo USB-C para USB-A",
         price: 50
       },
       {
-        productId: 19,
+        productId: "19",
         quantity: 1,
         name: "Adaptador de Energia Universal",
         price: 100
       },
       {
-        productId: 20,
+        productId: "20",
         quantity: 1,
         name: "Filtro de Linha com Proteção Contra Surtos",
         price: 150
@@ -197,13 +197,13 @@ export const purchases: Purchase[] = [
     total: 1800,
     items: [
       {
-        productId: 21,
+        productId: "21",
         quantity: 1,
         name: "Caixa de Som Bluetooth Portátil",
         price: 800
       },
       {
-        productId: 22,
+        productId: "22",
         quantity: 1,
         name: "Carregador Solar Portátil",
         price: 1000
