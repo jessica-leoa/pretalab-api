@@ -6,12 +6,13 @@ import { products } from '../data/productsData';
 
 export const processCheckout = (checkoutData: CheckoutRequest): void => {
   
+  // Validar se o total confere com o cálculo real
+  validateTotal(checkoutData);
+
     if (checkoutData.total > 20000) {
     throw new Error('O valor total da compra excede o limite de R$20.000.');
     
   }
-  // Validar se o total confere com o cálculo real
-  validateTotal(checkoutData);
   
   const itemsWithDetails = getProductsWithDetails(checkoutData.cart);
   
@@ -31,7 +32,7 @@ export const processCheckout = (checkoutData: CheckoutRequest): void => {
 const validateTotal = (checkoutData: CheckoutRequest) => {
   const calculatedTotal = checkoutData.cart.reduce((total, item) => {
     const product = products.find(p => p.id === item.productId);
-    return total + (product ? product.price * item.quantity : 0);
+    return total + (product ? product.price * item.quantity  : 0);
   }, 0);
   
   if (Math.abs(calculatedTotal - checkoutData.total) > 0.01) {

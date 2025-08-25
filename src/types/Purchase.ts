@@ -1,5 +1,5 @@
 export interface PurchaseItem {
-  productId: number;
+  productId: string;
   quantity: number;
   name: string;
   price: number;

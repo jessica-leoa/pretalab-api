@@ -17,13 +17,13 @@ describe("Purchases API - Integration Tests", () => {
         total: 7850,
         items: [
           {
-            productId: 1,
+            productId: "1",
             quantity: 1,
             name: "Notebook Gamer Pro",
             price: 7500
           },
           {
-            productId: 2,
+            productId: "2",
             quantity: 1,
             name: "Mouse Sem Fio Ultra-leve",
             price: 350
@@ -36,7 +36,7 @@ describe("Purchases API - Integration Tests", () => {
         total: 1200,
         items: [
           {
-            productId: 3,
+            productId: "3",
             quantity: 2,
             name: "Teclado Mecânico RGB",
             price: 550
@@ -73,14 +73,14 @@ describe("Purchases API - Integration Tests", () => {
 
       // Verifica estrutura dos items
       expect(response.body[0].items[0]).toMatchObject({
-        productId: 3,
+        productId: "3",
         quantity: 2,
         name: "Teclado Mecânico RGB",
         price: 550
       });
 
       expect(response.body[1].items[0]).toMatchObject({
-        productId: 1,
+        productId: "1",
         quantity: 1,
         name: "Notebook Gamer Pro",
         price: 7500
@@ -102,7 +102,7 @@ describe("Purchases API - Integration Tests", () => {
       });
 
       expect(response.body.items[0]).toMatchObject({
-        productId: 1,
+        productId: "1",
         name: "Notebook Gamer Pro",
         price: 7500
       });

@@ -8,9 +8,9 @@ jest.mock("../../src/data/purchasesData", () => ({
 
 jest.mock("../../src/data/productsData", () => ({
   products: [
-    { id: 1, name: "Notebook Gamer Pro", price: 7500 },
-    { id: 2, name: "Mouse Sem Fio Ultra-leve", price: 350 },
-    { id: 3, name: "Teclado Mecânico RGB", price: 550 }
+    { id: "1", name: "Notebook Gamer Pro", price: 7500 },
+    { id: "2", name: "Mouse Sem Fio Ultra-leve", price: 350 },
+    { id: "3", name: "Teclado Mecânico RGB", price: 550 }
   ]
 }));
 
@@ -22,8 +22,8 @@ describe("POST /api/checkout", () => {
   it("should process checkout successfully and return 200 with success message", async () => {
     const checkoutData = {
       cart: [
-        { productId: 1, quantity: 1 },
-        { productId: 2, quantity: 2 }
+        { productId: "1", quantity: 1 },
+        { productId: "2", quantity: 2 }
       ],
       total: 8200
     };
@@ -37,18 +37,17 @@ describe("POST /api/checkout", () => {
       message: "Compra processada com sucesso!"
     });
     
-    // VERIFICAÇÃO COM toMatchObject
     expect(purchases[0]).toMatchObject({
       total: 8200,
       items: expect.arrayContaining([
         expect.objectContaining({
-          productId: 1,
+          productId: "1",
           name: "Notebook Gamer Pro",
           price: 7500,
           quantity: 1
         }),
         expect.objectContaining({
-          productId: 2, 
+          productId: "2", 
           name: "Mouse Sem Fio Ultra-leve",
           price: 350,
           quantity: 2
@@ -59,7 +58,7 @@ describe("POST /api/checkout", () => {
 
   it("should return 400 when total exceeds 20000", async () => {
     const checkoutData = {
-      cart: [{ productId: 1, quantity: 3 }],
+      cart: [{ productId: "1", quantity: 3 }],
       total: 25000
     };
 
@@ -109,7 +108,7 @@ describe("POST /api/checkout", () => {
 
   it("should return 400 for non-existent product", async () => {
     const checkoutData = {
-      cart: [{ productId: 999, quantity: 1 }],
+      cart: [{ productId: "999", quantity: 1 }],
       total: 1000
     };
 
@@ -126,7 +125,7 @@ describe("POST /api/checkout", () => {
   it("should return 400 when calculated total doesn't match sent total", async () => {
     const checkoutData = {
       cart: [
-        { productId: 1, quantity: 1 }
+        { productId: "1", quantity: 1 }
       ],
       total: 5000
     };
@@ -143,7 +142,7 @@ describe("POST /api/checkout", () => {
 
   it("should return 400 for negative quantity", async () => {
     const checkoutData = {
-      cart: [{ productId: 1, quantity: -1 }],
+      cart: [{ productId: "1", quantity: -1 }],
       total: 1000
     };
 
